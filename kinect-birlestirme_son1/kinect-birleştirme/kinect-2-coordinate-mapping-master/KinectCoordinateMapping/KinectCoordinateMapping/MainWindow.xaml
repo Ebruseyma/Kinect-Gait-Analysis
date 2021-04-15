@@ -1,0 +1,30 @@
+﻿<Window x:Class="KinectCoordinateMapping.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Kinect " Height="700" Width="1000"
+        Loaded="Window_Loaded" Closed="Window_Closed" WindowStyle="None">
+    <Grid Background="Gray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="Black">
+            <TextBlock Foreground="White" Margin="10" HorizontalAlignment="Left" Text="Kinect Floor Detection" />
+            <TextBlock Foreground="White" Margin="10" HorizontalAlignment="Right">
+                Distance: <Run x:Name="TblDistance" />m
+            </TextBlock>
+            
+        </Grid>
+        <Viewbox Grid.Row="1">
+            <Grid Width="1920" Height="1080">
+        <Image Name="camera" Width="1920" Height="1080" />
+               
+                <Canvas>
+                    <Image Name="ImgFoot" Source="/Hud.png" Stretch="Uniform" Width="40" Height="40" />
+                    <Image Name="ImgFloor" Source="/Hud.png" Stretch="Fill" Width="100" Height="40" />
+                    <Canvas Name="canvas" Width="1920" Height="1080" />
+                </Canvas>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</Window>
